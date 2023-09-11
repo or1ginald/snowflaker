@@ -66,14 +66,45 @@ body {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: white;
     border-radius: 50%;
     pointer-events: none;
     animation: snowfall linear infinite;
+    background: #000;
+    z-index: 2;
 }
 
 @keyframes snowfall {
     to {
         transform: translateY(100%);
     }
+}
+
+.centered-div {
+    position: absolute; /* Устанавливаем позицию блока absolute */
+    top: 50%; /* Перемещаем блок на 50% от верхней границы родительского контейнера */
+    left: 50%; /* Перемещаем блок на 50% от левой границы родительского контейнера */
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Применяем overflow: hidden; */
+}
+
+.buttons {
+    position: relative; /* Установите позицию как относительную */
+    z-index: 3; /* Установите более высокий z-index */
+}
+
+.button {
+    background-color: transparent;
+    color: #bc63ff;
+    padding: 10px 20px;
+    border: 1px solid #bc63ff;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+.button:hover{
+    color: #fff;
+    background-color: #bc63ff;
+    transform: scale(1.05);
 }

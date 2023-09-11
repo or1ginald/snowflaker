@@ -4,70 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Falling Snowflakes</title>
+    <script>(function () {
+        const script = document.createElement('script');
+        script.onload = function () {
+            const stats = new Stats();
+            document.body.appendChild(stats.dom);
+            requestAnimationFrame(function loop() {
+                stats.update();
+                requestAnimationFrame(loop)
+            });
+        };
+        script.src = 'https://mrdoob.github.io/stats.js/build/stats.min.js';
+        document.head.appendChild(script);
+    })()</script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="index.css">
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
 
-        .snowflake {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: snowfall linear infinite;
-            background: #000;
-        }
-
-        @keyframes snowfall {
-            to {
-                transform: translateY(100%);
-            }
-        }
     </style>
 </head>
 <body>
-<script>
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        document.body.appendChild(snowflake);
-
-        setTimeout(() => {
-            document.body.removeChild(snowflake);
-        }, 5000); // Удалить снежинку через 5 секунд
-
-        return snowflake;
-    }
-
-    function animateSnowflakes() {
-        const snowflakes = [];
-
-        function animate() {
-            debugger
-            const snowflake = createSnowflake();
-            snowflakes.push(snowflake);
-
-            snowflakes.forEach((flake, index) => {
-                const yPos = parseFloat(getComputedStyle(flake).top) || 0;
-                flake.style.top = (yPos + 1) + 'px';
-
-                if (yPos > window.innerHeight) {
-                    document.body.removeChild(flake);
-                    snowflakes.splice(index, 1);
-                }
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    }
-
-    animateSnowflakes();
-</script>
+<div class="centered-div">
+    <div class="buttons">
+        <button class="button" id="positionRerender">Position rerender</button>
+        <button class="button" id="transformRerender">Transform rerender</button>
+    </div>
+</div>
 </body>
 </html>
