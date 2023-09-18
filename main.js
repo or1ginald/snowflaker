@@ -1,5 +1,6 @@
 let renderEnj = "posit"
 let animationId;
+let lastSnowflakeCreationTime;
 const positBtn = document.getElementById('positionRerender')
 positBtn.addEventListener("click", () => {
     if (renderEnj === "posit") {
@@ -20,15 +21,29 @@ transBtn.addEventListener("click", () => {
 })
 
 
-function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    document.body.appendChild(snowflake);
+function createSnowflake(interval = 0) {
+    const snowflake = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    snowflake.classList.add("snowflake")
+    snowflake.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    snowflake.setAttribute("viewBox", "0 -0.5 13 13");
+    snowflake.setAttribute("shape-rendering", "crispEdges");
+    snowflake.setAttribute("width", "20");
+    snowflake.setAttribute("height", "20");
 
-    // setTimeout(() => {
-    //     document.body.removeChild(snowflake);
-    // }, 5000); // Удалить снежинку через 5 секунд
+    // Создаем копию path элемента
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("stroke", "#5b6ee1");
+    path.setAttribute("d", "M6 0h1M5 1h3M2 2h1M6 2h1M10 2h1M3 3h2M6 3h1M8 3h2M3 4h1M5 4h3M9 4h1M1 5h1M4 5h1M6 5h1M8 5h1M11 5h1M0 6h6M7 6h6M1 7h1M4 7h1M6 7h1M8 7h1M11 7h1M3 8h1M5 8h3M9 8h1M3 9h2M6 9h1M8 9h2M2 10h1M6 10h1M10 10h1M5 11h3M6 12h1");
+
+    // Добавляем path в SVG
+    snowflake.appendChild(path);
+
+    // Задаем случайное положение снежинки по горизонтали
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.position = "absolute"
+
+    // Добавляем SVG в документ
+    document.body.appendChild(snowflake);
 
     return snowflake;
 }
@@ -55,13 +70,26 @@ function transformRerender(snowflakes, currentFlake) {
     }
 }
 
+function renderNextFlake(delay = 0) {
+    const currentTime = Date.now();
+    const timeSinceLastExecution = currentTime - lastSnowflakeCreationTime;
+
+    if (timeSinceLastExecution < delay) { // 2000 миллисекунд = 2 секунды
+        return false
+    }
+
+    lastSnowflakeCreationTime = currentTime;
+    return true
+}
 
 function animateSnowflakes(enj) {
     let snowflakes = [];
 
     function animate() {
-        const snowflake = createSnowflake();
-        snowflakes.push(snowflake);
+        if(renderNextFlake(200) && snowflakes.length<50) {
+            const snowflake = createSnowflake();
+            snowflakes.push(snowflake);
+        }
 
         snowflakes.forEach((flake, index) => {
             if (enj === 'posit') {
@@ -78,7 +106,7 @@ function animateSnowflakes(enj) {
     if (animationId) {
         cancelAnimationFrame(animationId);
         const snowflakesCollection = document.querySelectorAll(".snowflake");
-        snowflakesCollection.forEach(function(snowflake) {
+        snowflakesCollection.forEach((snowflake)=> {
             snowflake.remove();
         });
         snowflakes = [];

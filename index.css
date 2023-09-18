@@ -42,6 +42,8 @@ table {
     border-spacing: 0;
 }
 
+/*-----------------------*/
+
 body {
     height: 100vh;
     width: 100vw;
@@ -52,10 +54,6 @@ body {
     background-color: cornflowerblue;
 }
 
-.snowflake {
-    display: block;
-    background-color: #000;
-}
 
 body {
     margin: 0;
@@ -64,12 +62,9 @@ body {
 
 .snowflake {
     position: absolute;
-    width: 10px;
-    height: 10px;
     border-radius: 50%;
     pointer-events: none;
     animation: snowfall linear infinite;
-    background: #000;
     z-index: 2;
 }
 
@@ -88,6 +83,9 @@ body {
 }
 
 .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative; /* Установите позицию как относительную */
     z-index: 3; /* Установите более высокий z-index */
 }
