@@ -1,0 +1,37 @@
+.snowflakes-container {
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+
+@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay) {
+    .snowflake:nth-child(#{$index}) {
+        opacity: $opacity;
+        transform: translate(#{$translate}) scale($scale);
+        animation: fall-#{$index} 100.3s -#{$animation-delay}s linear infinite;
+    }
+
+    @keyframes fall-#{$index} {
+        100% {
+            transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(360deg);
+        }
+    }
+}
+
+@for $i from 1 through 47 {
+    $opacity: if($i % 2 == 0, 0.5, 0.7);
+    $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
+    $scale: if($i % 2 == 0, calc(random(10)/10), calc(random(2)/2));
+    $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
+
+    @include create-snowflake($i, $opacity, calc($translate - 10px), $scale, $animation-delay);
+}
+/*
+@for $i from 1 through 10 {
+    $opacity: if($i % 2 == 0, 0.5, 0.7);
+    $translate: if($i % 2 == 0, random(0, 100) * 1vw, random(0, 100) * 1vw);
+    $scale: if($i % 2 == 0, random(0.1, 1), random(0.5, 1));
+    $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
+
+    @include create-snowflake($i, $opacity, $translate - 10px, $scale, $animation-delay);
+}*/

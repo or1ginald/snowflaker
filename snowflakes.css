@@ -1,0 +1,532 @@
+.snowflakes-container {
+  padding: 0;
+  width: 0;
+  height: 0;
+}
+
+.snowflake:nth-child(1) {
+  opacity: 0.7;
+  transform: translate(calc(46vw - 10px)) scale(0.5);
+  animation: fall-1 100.3s -5s linear infinite;
+}
+
+@keyframes fall-1 {
+  100% {
+    transform: translate(calc(46vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(2) {
+  opacity: 0.5;
+  transform: translate(calc(100vw - 10px)) scale(1);
+  animation: fall-2 100.3s -20s linear infinite;
+}
+
+@keyframes fall-2 {
+  100% {
+    transform: translate(calc(100vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(3) {
+  opacity: 0.7;
+  transform: translate(calc(28vw - 10px)) scale(1);
+  animation: fall-3 100.3s -15s linear infinite;
+}
+
+@keyframes fall-3 {
+  100% {
+    transform: translate(calc(28vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(4) {
+  opacity: 0.5;
+  transform: translate(calc(9vw - 10px)) scale(0.4);
+  animation: fall-4 100.3s -40s linear infinite;
+}
+
+@keyframes fall-4 {
+  100% {
+    transform: translate(calc(9vw - 10px), 100vh) scale(0.4) rotate(360deg);
+  }
+}
+.snowflake:nth-child(5) {
+  opacity: 0.7;
+  transform: translate(calc(71vw - 10px)) scale(0.5);
+  animation: fall-5 100.3s -25s linear infinite;
+}
+
+@keyframes fall-5 {
+  100% {
+    transform: translate(calc(71vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(6) {
+  opacity: 0.5;
+  transform: translate(calc(39vw - 10px)) scale(0.7);
+  animation: fall-6 100.3s -60s linear infinite;
+}
+
+@keyframes fall-6 {
+  100% {
+    transform: translate(calc(39vw - 10px), 100vh) scale(0.7) rotate(360deg);
+  }
+}
+.snowflake:nth-child(7) {
+  opacity: 0.7;
+  transform: translate(calc(58vw - 10px)) scale(0.5);
+  animation: fall-7 100.3s -35s linear infinite;
+}
+
+@keyframes fall-7 {
+  100% {
+    transform: translate(calc(58vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(8) {
+  opacity: 0.5;
+  transform: translate(calc(2vw - 10px)) scale(0.1);
+  animation: fall-8 100.3s -80s linear infinite;
+}
+
+@keyframes fall-8 {
+  100% {
+    transform: translate(calc(2vw - 10px), 100vh) scale(0.1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(9) {
+  opacity: 0.7;
+  transform: translate(calc(31vw - 10px)) scale(0.5);
+  animation: fall-9 100.3s -45s linear infinite;
+}
+
+@keyframes fall-9 {
+  100% {
+    transform: translate(calc(31vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(10) {
+  opacity: 0.5;
+  transform: translate(calc(32vw - 10px)) scale(0.7);
+  animation: fall-10 100.3s -100s linear infinite;
+}
+
+@keyframes fall-10 {
+  100% {
+    transform: translate(calc(32vw - 10px), 100vh) scale(0.7) rotate(360deg);
+  }
+}
+.snowflake:nth-child(11) {
+  opacity: 0.7;
+  transform: translate(calc(12vw - 10px)) scale(0.5);
+  animation: fall-11 100.3s -55s linear infinite;
+}
+
+@keyframes fall-11 {
+  100% {
+    transform: translate(calc(12vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(12) {
+  opacity: 0.5;
+  transform: translate(calc(87vw - 10px)) scale(0.2);
+  animation: fall-12 100.3s -120s linear infinite;
+}
+
+@keyframes fall-12 {
+  100% {
+    transform: translate(calc(87vw - 10px), 100vh) scale(0.2) rotate(360deg);
+  }
+}
+.snowflake:nth-child(13) {
+  opacity: 0.7;
+  transform: translate(calc(83vw - 10px)) scale(1);
+  animation: fall-13 100.3s -65s linear infinite;
+}
+
+@keyframes fall-13 {
+  100% {
+    transform: translate(calc(83vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(14) {
+  opacity: 0.5;
+  transform: translate(calc(85vw - 10px)) scale(1);
+  animation: fall-14 100.3s -140s linear infinite;
+}
+
+@keyframes fall-14 {
+  100% {
+    transform: translate(calc(85vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(15) {
+  opacity: 0.7;
+  transform: translate(calc(72vw - 10px)) scale(1);
+  animation: fall-15 100.3s -75s linear infinite;
+}
+
+@keyframes fall-15 {
+  100% {
+    transform: translate(calc(72vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(16) {
+  opacity: 0.5;
+  transform: translate(calc(54vw - 10px)) scale(0.4);
+  animation: fall-16 100.3s -160s linear infinite;
+}
+
+@keyframes fall-16 {
+  100% {
+    transform: translate(calc(54vw - 10px), 100vh) scale(0.4) rotate(360deg);
+  }
+}
+.snowflake:nth-child(17) {
+  opacity: 0.7;
+  transform: translate(calc(44vw - 10px)) scale(0.5);
+  animation: fall-17 100.3s -85s linear infinite;
+}
+
+@keyframes fall-17 {
+  100% {
+    transform: translate(calc(44vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(18) {
+  opacity: 0.5;
+  transform: translate(calc(11vw - 10px)) scale(0.6);
+  animation: fall-18 100.3s -180s linear infinite;
+}
+
+@keyframes fall-18 {
+  100% {
+    transform: translate(calc(11vw - 10px), 100vh) scale(0.6) rotate(360deg);
+  }
+}
+.snowflake:nth-child(19) {
+  opacity: 0.7;
+  transform: translate(calc(92vw - 10px)) scale(1);
+  animation: fall-19 100.3s -95s linear infinite;
+}
+
+@keyframes fall-19 {
+  100% {
+    transform: translate(calc(92vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(20) {
+  opacity: 0.5;
+  transform: translate(calc(28vw - 10px)) scale(0.9);
+  animation: fall-20 100.3s -200s linear infinite;
+}
+
+@keyframes fall-20 {
+  100% {
+    transform: translate(calc(28vw - 10px), 100vh) scale(0.9) rotate(360deg);
+  }
+}
+.snowflake:nth-child(21) {
+  opacity: 0.7;
+  transform: translate(calc(79vw - 10px)) scale(1);
+  animation: fall-21 100.3s -105s linear infinite;
+}
+
+@keyframes fall-21 {
+  100% {
+    transform: translate(calc(79vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(22) {
+  opacity: 0.5;
+  transform: translate(calc(96vw - 10px)) scale(0.5);
+  animation: fall-22 100.3s -220s linear infinite;
+}
+
+@keyframes fall-22 {
+  100% {
+    transform: translate(calc(96vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(23) {
+  opacity: 0.7;
+  transform: translate(calc(58vw - 10px)) scale(0.5);
+  animation: fall-23 100.3s -115s linear infinite;
+}
+
+@keyframes fall-23 {
+  100% {
+    transform: translate(calc(58vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(24) {
+  opacity: 0.5;
+  transform: translate(calc(36vw - 10px)) scale(0.7);
+  animation: fall-24 100.3s -240s linear infinite;
+}
+
+@keyframes fall-24 {
+  100% {
+    transform: translate(calc(36vw - 10px), 100vh) scale(0.7) rotate(360deg);
+  }
+}
+.snowflake:nth-child(25) {
+  opacity: 0.7;
+  transform: translate(calc(11vw - 10px)) scale(0.5);
+  animation: fall-25 100.3s -125s linear infinite;
+}
+
+@keyframes fall-25 {
+  100% {
+    transform: translate(calc(11vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(26) {
+  opacity: 0.5;
+  transform: translate(calc(54vw - 10px)) scale(0.6);
+  animation: fall-26 100.3s -260s linear infinite;
+}
+
+@keyframes fall-26 {
+  100% {
+    transform: translate(calc(54vw - 10px), 100vh) scale(0.6) rotate(360deg);
+  }
+}
+.snowflake:nth-child(27) {
+  opacity: 0.7;
+  transform: translate(calc(80vw - 10px)) scale(1);
+  animation: fall-27 100.3s -135s linear infinite;
+}
+
+@keyframes fall-27 {
+  100% {
+    transform: translate(calc(80vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(28) {
+  opacity: 0.5;
+  transform: translate(calc(58vw - 10px)) scale(0.6);
+  animation: fall-28 100.3s -280s linear infinite;
+}
+
+@keyframes fall-28 {
+  100% {
+    transform: translate(calc(58vw - 10px), 100vh) scale(0.6) rotate(360deg);
+  }
+}
+.snowflake:nth-child(29) {
+  opacity: 0.7;
+  transform: translate(calc(68vw - 10px)) scale(0.5);
+  animation: fall-29 100.3s -145s linear infinite;
+}
+
+@keyframes fall-29 {
+  100% {
+    transform: translate(calc(68vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(30) {
+  opacity: 0.5;
+  transform: translate(calc(74vw - 10px)) scale(0.5);
+  animation: fall-30 100.3s -300s linear infinite;
+}
+
+@keyframes fall-30 {
+  100% {
+    transform: translate(calc(74vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(31) {
+  opacity: 0.7;
+  transform: translate(calc(25vw - 10px)) scale(1);
+  animation: fall-31 100.3s -155s linear infinite;
+}
+
+@keyframes fall-31 {
+  100% {
+    transform: translate(calc(25vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(32) {
+  opacity: 0.5;
+  transform: translate(calc(99vw - 10px)) scale(0.3);
+  animation: fall-32 100.3s -320s linear infinite;
+}
+
+@keyframes fall-32 {
+  100% {
+    transform: translate(calc(99vw - 10px), 100vh) scale(0.3) rotate(360deg);
+  }
+}
+.snowflake:nth-child(33) {
+  opacity: 0.7;
+  transform: translate(calc(36vw - 10px)) scale(1);
+  animation: fall-33 100.3s -165s linear infinite;
+}
+
+@keyframes fall-33 {
+  100% {
+    transform: translate(calc(36vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(34) {
+  opacity: 0.5;
+  transform: translate(calc(92vw - 10px)) scale(0.4);
+  animation: fall-34 100.3s -340s linear infinite;
+}
+
+@keyframes fall-34 {
+  100% {
+    transform: translate(calc(92vw - 10px), 100vh) scale(0.4) rotate(360deg);
+  }
+}
+.snowflake:nth-child(35) {
+  opacity: 0.7;
+  transform: translate(calc(81vw - 10px)) scale(0.5);
+  animation: fall-35 100.3s -175s linear infinite;
+}
+
+@keyframes fall-35 {
+  100% {
+    transform: translate(calc(81vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(36) {
+  opacity: 0.5;
+  transform: translate(calc(90vw - 10px)) scale(0.1);
+  animation: fall-36 100.3s -360s linear infinite;
+}
+
+@keyframes fall-36 {
+  100% {
+    transform: translate(calc(90vw - 10px), 100vh) scale(0.1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(37) {
+  opacity: 0.7;
+  transform: translate(calc(88vw - 10px)) scale(1);
+  animation: fall-37 100.3s -185s linear infinite;
+}
+
+@keyframes fall-37 {
+  100% {
+    transform: translate(calc(88vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(38) {
+  opacity: 0.5;
+  transform: translate(calc(32vw - 10px)) scale(0.3);
+  animation: fall-38 100.3s -380s linear infinite;
+}
+
+@keyframes fall-38 {
+  100% {
+    transform: translate(calc(32vw - 10px), 100vh) scale(0.3) rotate(360deg);
+  }
+}
+.snowflake:nth-child(39) {
+  opacity: 0.7;
+  transform: translate(calc(6vw - 10px)) scale(1);
+  animation: fall-39 100.3s -195s linear infinite;
+}
+
+@keyframes fall-39 {
+  100% {
+    transform: translate(calc(6vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(40) {
+  opacity: 0.5;
+  transform: translate(calc(25vw - 10px)) scale(0.2);
+  animation: fall-40 100.3s -400s linear infinite;
+}
+
+@keyframes fall-40 {
+  100% {
+    transform: translate(calc(25vw - 10px), 100vh) scale(0.2) rotate(360deg);
+  }
+}
+.snowflake:nth-child(41) {
+  opacity: 0.7;
+  transform: translate(calc(33vw - 10px)) scale(0.5);
+  animation: fall-41 100.3s -205s linear infinite;
+}
+
+@keyframes fall-41 {
+  100% {
+    transform: translate(calc(33vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(42) {
+  opacity: 0.5;
+  transform: translate(calc(62vw - 10px)) scale(0.7);
+  animation: fall-42 100.3s -420s linear infinite;
+}
+
+@keyframes fall-42 {
+  100% {
+    transform: translate(calc(62vw - 10px), 100vh) scale(0.7) rotate(360deg);
+  }
+}
+.snowflake:nth-child(43) {
+  opacity: 0.7;
+  transform: translate(calc(12vw - 10px)) scale(1);
+  animation: fall-43 100.3s -215s linear infinite;
+}
+
+@keyframes fall-43 {
+  100% {
+    transform: translate(calc(12vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(44) {
+  opacity: 0.5;
+  transform: translate(calc(71vw - 10px)) scale(0.5);
+  animation: fall-44 100.3s -440s linear infinite;
+}
+
+@keyframes fall-44 {
+  100% {
+    transform: translate(calc(71vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+.snowflake:nth-child(45) {
+  opacity: 0.7;
+  transform: translate(calc(31vw - 10px)) scale(1);
+  animation: fall-45 100.3s -225s linear infinite;
+}
+
+@keyframes fall-45 {
+  100% {
+    transform: translate(calc(31vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(46) {
+  opacity: 0.5;
+  transform: translate(calc(23vw - 10px)) scale(1);
+  animation: fall-46 100.3s -460s linear infinite;
+}
+
+@keyframes fall-46 {
+  100% {
+    transform: translate(calc(23vw - 10px), 100vh) scale(1) rotate(360deg);
+  }
+}
+.snowflake:nth-child(47) {
+  opacity: 0.7;
+  transform: translate(calc(79vw - 10px)) scale(0.5);
+  animation: fall-47 100.3s -235s linear infinite;
+}
+
+@keyframes fall-47 {
+  100% {
+    transform: translate(calc(79vw - 10px), 100vh) scale(0.5) rotate(360deg);
+  }
+}
+/*
+@for $i from 1 through 10 {
+    $opacity: if($i % 2 == 0, 0.5, 0.7);
+    $translate: if($i % 2 == 0, random(0, 100) * 1vw, random(0, 100) * 1vw);
+    $scale: if($i % 2 == 0, random(0.1, 1), random(0.5, 1));
+    $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
+
+    @include create-snowflake($i, $opacity, $translate - 10px, $scale, $animation-delay);
+}*/
