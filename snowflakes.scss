@@ -1,5 +1,3 @@
-
-
 .snowflakes-container {
   padding: 0;
   width: 0;
@@ -11,45 +9,40 @@
   @return calc(round($number * $multiplier) / $multiplier)
 }
 
-@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay, $randomNum) {
+@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay, $animationDuration, $randomNum, $snowflakeXTrajectoryDeviation) {
   $startAnimPercentage: $randomNum + '%';
   $startAnimHeight: $randomNum + vh;
+  $endAnimVW: $translate + $snowflakeXTrajectoryDeviation;
+
 
   .snowflake:nth-child(#{$index}) {
     opacity: $opacity;
-    transform: translate(#{$translate}) scale($scale);
-    animation: fall-#{$index} 100.3s -#{$animation-delay}s linear infinite;
+    transform: translate(#{$translate}, -10px) scale($scale);
+    animation: fall-#{$index} #{$animationDuration} -#{$animation-delay} linear infinite;
   }
 
   @keyframes fall-#{$index} {
-  #{$startAnimPercentage} {
+    #{$startAnimPercentage} {
       transform: translate(nth($translate, 1), $startAnimHeight) scale($scale) rotate(180deg);
     }
     to {
-      transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(360deg);
+      transform: translate($endAnimVW, 100vh) scale($scale) rotate(360deg);
     }
   }
 }
 
-@for $i from 1 through 47 {
+@for $i from 1 through 94 {
   $opacity: toFixed(random(), 5);
   $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
   $scale: if($i % 2 == 0, calc(random(10) / 10), calc(random(2) / 2));
-  $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
-  $randomPercentage: toFixed(random(), 5) * 100;
+  $animation-delay: random(100) + s;
+  $animationDuration: random(100 - 30) + 30 + s;
+  $randomPercentage: toFixed(random(), 5) * 80;
+  $snowflakeXTrajectoryDeviationAbs: toFixed(random(), 5) * 10;
+  $snowflakeXTrajectoryDeviation: if($i % 2 == 0, $snowflakeXTrajectoryDeviationAbs, -$snowflakeXTrajectoryDeviationAbs);
 
-  @include create-snowflake($i, $opacity, calc($translate - 10px), $scale, $animation-delay, $randomPercentage);
+  @include create-snowflake($i, $opacity, $translate, $scale, $animation-delay, $animationDuration, $randomPercentage, $snowflakeXTrajectoryDeviation);
 }
-
-/*
-@for $i from 1 through 10 {
-    $opacity: if($i % 2 == 0, 0.5, 0.7);
-    $translate: if($i % 2 == 0, random(0, 100) * 1vw, random(0, 100) * 1vw);
-    $scale: if($i % 2 == 0, random(0.1, 1), random(0.5, 1));
-    $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
-
-    @include create-snowflake($i, $opacity, $translate - 10px, $scale, $animation-delay);
-}*/
 
 
 
