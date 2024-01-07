@@ -1,36 +1,44 @@
+
+
 .snowflakes-container {
-    padding: 0;
-    width: 0;
-    height: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
 }
 
 @function toFixed($number, $decimalPlaces) {
-    $multiplier: pow(10, $decimalPlaces);
-    @return calc(round($number * $multiplier) / $multiplier)
+  $multiplier: pow(10, $decimalPlaces);
+  @return calc(round($number * $multiplier) / $multiplier)
 }
 
-@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay) {
-    .snowflake:nth-child(#{$index}) {
-        opacity: $opacity;
-        transform: translate(#{$translate}) scale($scale);
-        animation: fall-#{$index} 100.3s -#{$animation-delay}s linear infinite;
-    }
+@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay, $startAnim) {
 
-    @keyframes fall-#{$index} {
-        100% {
-            transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(360deg);
-        }
+  .snowflake:nth-child(#{$index}) {
+    opacity: $opacity;
+    transform: translate(#{$translate}) scale($scale);
+    animation: fall-#{$index} 100.3s -#{$animation-delay}s linear infinite;
+  }
+
+  @keyframes fall-#{$index} {
+  #{$startAnim} {
+      transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(180deg);
     }
+    to {
+      transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(360deg);
+    }
+  }
 }
 
 @for $i from 1 through 47 {
-    $opacity: toFixed(random(), 5);
-    $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
-    $scale: if($i % 2 == 0, calc(random(10)/10), calc(random(2)/2));
-    $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
+  $opacity: toFixed(random(), 5);
+  $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
+  $scale: if($i % 2 == 0, calc(random(10) / 10), calc(random(2) / 2));
+  $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
+  $randomPercentage: toFixed(random(), 5) * 100 + '%';
 
-    @include create-snowflake($i, $opacity, calc($translate - 10px), $scale, $animation-delay);
+  @include create-snowflake($i, $opacity, calc($translate - 10px), $scale, $animation-delay, $randomPercentage);
 }
+
 /*
 @for $i from 1 through 10 {
     $opacity: if($i % 2 == 0, 0.5, 0.7);
