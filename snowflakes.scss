@@ -4,6 +4,11 @@
     height: 0;
 }
 
+@function toFixed($number, $decimalPlaces) {
+    $multiplier: pow(10, $decimalPlaces);
+    @return calc(round($number * $multiplier) / $multiplier)
+}
+
 @mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay) {
     .snowflake:nth-child(#{$index}) {
         opacity: $opacity;
@@ -19,7 +24,7 @@
 }
 
 @for $i from 1 through 47 {
-    $opacity: if($i % 2 == 0, 0.5, 0.7);
+    $opacity: toFixed(random(), 5);
     $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
     $scale: if($i % 2 == 0, calc(random(10)/10), calc(random(2)/2));
     $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
@@ -35,3 +40,6 @@
 
     @include create-snowflake($i, $opacity, $translate - 10px, $scale, $animation-delay);
 }*/
+
+
+
