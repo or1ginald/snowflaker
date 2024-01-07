@@ -11,7 +11,9 @@
   @return calc(round($number * $multiplier) / $multiplier)
 }
 
-@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay, $startAnim) {
+@mixin create-snowflake($index, $opacity, $translate, $scale, $animation-delay, $randomNum) {
+  $startAnimPercentage: $randomNum + '%';
+  $startAnimHeight: $randomNum + vh;
 
   .snowflake:nth-child(#{$index}) {
     opacity: $opacity;
@@ -20,8 +22,8 @@
   }
 
   @keyframes fall-#{$index} {
-  #{$startAnim} {
-      transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(180deg);
+  #{$startAnimPercentage} {
+      transform: translate(nth($translate, 1), $startAnimHeight) scale($scale) rotate(180deg);
     }
     to {
       transform: translate(nth($translate, 1), 100vh) scale($scale) rotate(360deg);
@@ -34,7 +36,7 @@
   $translate: if($i % 2 == 0, calc(random(101) - 1) * 1vw, calc(random(101) - 1) * 1vw);
   $scale: if($i % 2 == 0, calc(random(10) / 10), calc(random(2) / 2));
   $animation-delay: if($i % 2 == 0, $i * 10, $i * 5);
-  $randomPercentage: toFixed(random(), 5) * 100 + '%';
+  $randomPercentage: toFixed(random(), 5) * 100;
 
   @include create-snowflake($i, $opacity, calc($translate - 10px), $scale, $animation-delay, $randomPercentage);
 }
