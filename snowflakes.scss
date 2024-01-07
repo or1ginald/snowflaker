@@ -37,9 +37,9 @@
   $scale: if($i % 2 == 0, calc(random(10) / 10), calc(random(2) / 2));
   $animation-delay: random(100) + s;
   $animationDuration: random(100 - 30) + 30 + s;
-  $randomPercentage: toFixed(random(), 5) * 80;
+  $randomPercentage: toFixed(random(), 5) * 60;
   $snowflakeXTrajectoryDeviationAbs: toFixed(random(), 5) * 10;
-  $snowflakeXTrajectoryDeviation: if($i % 2 == 0, $snowflakeXTrajectoryDeviationAbs, -$snowflakeXTrajectoryDeviationAbs);
+  $snowflakeXTrajectoryDeviation: if(random(100) % 2 == 0, $snowflakeXTrajectoryDeviationAbs, -$snowflakeXTrajectoryDeviationAbs);
 
   @include create-snowflake($i, $opacity, $translate, $scale, $animation-delay, $animationDuration, $randomPercentage, $snowflakeXTrajectoryDeviation);
 }
